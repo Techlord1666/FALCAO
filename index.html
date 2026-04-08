@@ -180,36 +180,42 @@
         }
 
         /* Hero Section */
-       .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: white;
-}
+      .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 5rem;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-        url('images/falcao-delivery.jpg') center/cover no-repeat;
-    z-index: -2;
-}
-      .hero-grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: -1;
-}
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+            animation: gridMove 20s linear infinite;
+        }
+
         
 
         @keyframes gridMove {
@@ -217,11 +223,13 @@
             100% { transform: translate(50px, 50px); }
         }
 
-       .hero-content {
-    max-width: 700px;
-    text-align: left;
-    padding: 20px;
-}
+      .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -235,7 +243,7 @@
             margin-bottom: 2rem;
             animation: pulse 2s ease-in-out infinite;
         }
-
+        
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
@@ -1185,7 +1193,7 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <a href="#" class="logo">
-            <span>⚡</span> Falcao
+            <span></span> Falcao
         </a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
@@ -1204,32 +1212,37 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-grid"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Now Delivering Across Nigeria
-            </div>
-            <h1>Fast & Affordable Delivery You Can Trust</h1>
-            <p>Helping businesses grow through reliable logistics. We handle your packages with speed, care, and professionalism.</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/2348100884237?text=Hello%20Falcao%2C%20I%20want%20to%20place%20an%20order" class="btn-primary" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9H11a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
-                    Place an Order
-                </a>
-                <a href="https://wa.me/2348100884237?text=Hello%20Falcao%2C%20I%20need%20more%20information" class="btn-secondary" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9H11a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
-                    Contact Us
-                </a>
-            </div>
+   <section class="hero">
+    <!-- Hero Image -->
+    <img src="images/falcao-delivery.jpg" alt="Falcao Delivery Service" class="hero-image">
+
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Now Delivering Across Nigeria
         </div>
-    </section>
+
+        <h1>Fast & Affordable Delivery You Can Trust</h1>
+
+        <p>
+            Helping businesses grow through reliable logistics. 
+            We handle your packages with speed, care, and professionalism.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="https://wa.me/2348100884237?text=Hello%20Falcao%2C%20I%20want%20to%20place%20an%20order" class="btn-primary" target="_blank">
+                Place an Order
+            </a>
+
+            <a href="https://wa.me/2348100884237?text=Hello%20Falcao%2C%20I%20need%20more%20information" class="btn-secondary" target="_blank">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>
 
     <!-- Stats Section -->
     <section class="stats">
